@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Java Training in Chennai with real-world projects, placement assistance, and certification. Join now to enhance your career in Java development!">
+    <meta name="keywords" content="java training in Chennai, programming languages, Spring framework, core Java, high paying careers">
+    <meta name="author" content="Your Company Name">
+    <title>Java Training in Chennai | Best Institute for Java Courses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="hello.webp" alt="Your Company Logo">
+                <span class="company-name">CODE EDGE ACADEMY</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#course-details">Course Details</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="leadPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Unlock Your Course Fees Details!</h2>
+            <p>Enter your details to get access to the full course fees and discounts!</p>
+            <form id="leadForm">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+    
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+    
+                <label for="yearOfPassOut">Year of Pass Out:</label>
+                <input type="text" id="yearOfPassOut" name="yearOfPassOut" required>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    </div>
+    <style>
+        /* Popup styles */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .popup h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #28a745;
+    }
+
+    .popup p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .popup form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .popup form input, .popup form button {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .popup form button {
+        background: #28a745;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .popup form button:hover {
+        background: #218838;
+    }
+
+    .popup-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    </style>
+    <script>
+    window.onload = function() {
+        const popup = document.getElementById('leadPopup');
+        const close = document.querySelector('.popup-close');
+    
+        popup.style.display = 'flex';
+    
+        close.addEventListener('click', function() {
+            popup.style.display = 'none';
+        });
+    
+        // Close popup on outside click
+        popup.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        });
+    };
+    document.addEventListener("DOMContentLoaded", function () {
+        const leadPopup = document.getElementById("leadPopup");
+        const leadForm = document.getElementById("leadForm");
+        const popupClose = document.querySelector(".popup-close");
+
+        // Check if the form has been submitted
+        if (localStorage.getItem("formSubmitted") === "true") {
+            leadPopup.style.display = "none"; // Hide the popup if form is submitted
+        }
+
+        // Close popup
+        popupClose.addEventListener("click", function () {
+            leadPopup.style.display = "none";
+        });
+
+        // Handle form submission
+        leadForm.addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get form data
+            const studentName = document.getElementById("studentName").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const yearOfPassOut = document.getElementById("yearOfPassOut").value;
+
+            // Store form data in localStorage
+            const formData = { studentName, phoneNumber, yearOfPassOut };
+            localStorage.setItem("formData", JSON.stringify(formData));
+            localStorage.setItem("formSubmitted", "true");
+
+            // Hide the popup
+            leadPopup.style.display = "none";
+
+            // Send form data to Google Apps Script
+            const googleScriptURL = "https://script.google.com/macros/s/AKfycbzKCCX-RmtqvcB5h8LX2-gy4mNTYmE8AcFVx1YC81oD3lozZix4EiWrDzWJYUA0aLbtaQ/exec"; // Replace with your Web App URL
+
+            fetch(googleScriptURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({
+                    studentName: studentName,
+                    phoneNumber: phoneNumber,
+                    yearOfPassOut: yearOfPassOut
+                })
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log("Data submitted successfully:", result);
+                alert("Your details have been saved!");
+            })
+            .catch(error => {
+                console.error("Error submitting form:", error);
+            });
+        });
+    });
+    </script>
+    
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Java Training in Chennai</h1>
+                <p>Learn Core Java, J2EE, and Spring Framework with 100% placement assistance. Enhance your career with the best trainers in the industry!</p>
+                <p>Chennai, a vibrant IT hub, is home to some of the best Java training institutes offering industry-relevant courses and placement support. Whether you're a beginner or an experienced professional, mastering Java can open doors to lucrative career opportunities.</p>
+                <a href="#contact" class="cta-button">Enroll Now</a>
+            </div>
+        </section>
+
+        <section id="course-details" class="course-section">
+            <div class="container">
+                <h2>Why Choose Our Java Training?</h2>
+                <ul class="highlight-list">
+                    <li><strong>Industry-Leading Curriculum:</strong> Master Core Java, J2EE, and advanced frameworks like Spring and Hibernate.</li>
+                    <li><strong>Real-World Exposure:</strong> Work on hands-on projects that replicate industry challenges.</li>
+                    <li><strong>Career Boost:</strong> Get 100% placement assistance with mock interviews, resume building, and job referrals in Chennai.</li>
+                    <li><strong>Experienced Mentors:</strong> Learn from experts with over a decade of professional experience in Java development.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Course Highlights:</strong></p>
+                    <ul>
+                        <li>Core Java: In-depth training on OOP concepts, exception handling, multithreading, and data structures.</li>
+                        <li>Advanced Java: Gain expertise in JDBC, Servlets, JSP, and essential web development techniques.</li>
+                        <li>Popular Frameworks: Master enterprise-grade technologies like Spring, Hibernate, and Struts.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-box">
+                    <h3>Arjun R.</h3>
+                    <p>"The course was structured perfectly, and I secured a top MNC job as a Java Developer."</p>
+                </div>
+                <div class="testimonial-box">
+                    <h3>Anita S.</h3>
+                    <p>"Exceptional training with practical projects. Highly recommended for Java enthusiasts!"</p>
+                </div>
+                <div class="testimonial-box">
+                    <h3>Karthik P.</h3>
+                    <p>"Thanks to the placement support, I am now leading a development team. Worth every penny!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        </section>
+        <section id="course-structure" class="course-structure-section"></section>
+            <div class="container">
+                <h2>Comprehensive Java Course Structure</h2>
+                <p>Our <strong>Java Training in Chennai</strong> provides a meticulously designed course structure that covers every aspect of Java programming, ensuring you gain both theoretical knowledge and practical expertise. Here's what you'll learn:</p>
+                <ul class="course-structure-list">
+                    <li><strong>Week 1-2: Introduction to Java Programming</strong>
+                        <ul>
+                            <li>Setting up the Java development environment (JDK, IDE).</li>
+                            <li>Basics of Java syntax: variables, data types, operators.</li>
+                            <li>Understanding Java Virtual Machine (JVM) and platform independence.</li>
+                            <li>Writing and executing your first Java program.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Week 3-4: Core Java Concepts</strong>
+                        <ul>
+                            <li>Control structures: if-else, loops, and switch-case statements.</li>
+                            <li>Introduction to arrays, strings, and their manipulations.</li>
+                            <li>Exception handling techniques and debugging basics.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Week 5-6: Object-Oriented Programming (OOP)</strong>
+                        <ul>
+                            <li>Defining classes and objects.</li>
+                            <li>Understanding inheritance, polymorphism, and encapsulation.</li>
+                            <li>Method overloading and overriding.</li>
+                            <li>Constructors, access modifiers, and abstraction.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Week 7-8: Advanced Java Programming</strong>
+                        <ul>
+                            <li>Working with Java Database Connectivity (JDBC) for database interaction.</li>
+                            <li>Introduction to Servlets and JSP for building web applications.</li>
+                            <li>Session management, cookies, and request handling.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Week 9-10: Java Frameworks and Tools</strong>
+                        <ul>
+                            <li>Mastering Spring Framework: Dependency injection, AOP, and MVC architecture.</li>
+                            <li>Hibernate for object-relational mapping (ORM).</li>
+                            <li>Using Struts for enterprise applications.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Week 11-12: Capstone Project and Deployment</strong>
+                        <ul>
+                            <li>Developing a complete Java-based project from scratch.</li>
+                            <li>Version control using Git and collaboration tools.</li>
+                            <li>Application testing, debugging, and final deployment.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Join our <strong>best Java training in Chennai</strong> to transform your career in programming. Enroll today to start your journey toward becoming a skilled Java developer!</p>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form id="contact-form" class="contact-form" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const contactForm = document.getElementById("contact-form");
+        
+                // Handle form submission
+                contactForm.addEventListener("submit", function (e) {
+                    e.preventDefault(); // Prevent the default form submission
+        
+                    // Get the form data
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById("email").value;
+                    const message = document.getElementById("message").value;
+        
+                    // Google Apps Script Web App URL
+                    const googleScriptURL = "https://script.google.com/macros/s/AKfycbx09zArrNTCe8Nu3GPjseLy-IBbMFwnYKzscyKIuZQSVSQIB2C7Vx1PcEIgCbHnBnLa/exec"; // Replace with your Web App URL
+        
+                    // Send the form data to Google Apps Script via POST
+                    fetch(googleScriptURL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: new URLSearchParams({
+                            name: name,
+                            email: email,
+                            message: message
+                        })
+                    })
+                    .then(response => response.text())
+                    .then(result => {
+                        console.log("Form submitted successfully:", result);
+                        alert("Thank you for reaching out! Your message has been submitted.");
+                        // Optionally, clear the form
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        console.error("Error submitting form:", error);
+                        alert("Oops! Something went wrong, please try again.");
+                    });
+                });
+            });
+        </script>
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3 class="faq-question">Is there placement support?</h3>
+                    <p class="faq-answer">Yes, we offer 100% placement support, including mock interviews, resume building, and job referrals to top companies.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Is training available online?</h3>
+                    <p class="faq-answer">Yes, we provide both classroom and online training options to suit your learning preferences.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Is flexible batch timings allowed?</h3>
+                    <p class="faq-answer">Absolutely! We offer flexible batch timings to accommodate working professionals and students.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How many students will be there per class?</h3>
+                    <p class="faq-answer">We maintain small batch sizes, usually 10-15 students, to ensure personalized attention for every participant.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What will be the total course fees?</h3>
+                    <p class="faq-answer">The course fees depend on the specific training module chosen. Contact us for detailed pricing information.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I need any prior coding experience?</h3>
+                    <p class="faq-answer">No prior coding experience is required. Our course is designed for beginners as well as experienced professionals.</p>
+                </div>
+            </div>
+        </section>
+        <div class="highlight-section">
+            <div class="container">
+                <p class="highlight-text">Join this course with an initial payment of <strong>&#8377; 5000</strong> only! Pay the remaining fees later and start your journey towards a lucrative career in Java development.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="cta-button">Enroll Now</a>
+                    <a href="#faq" class="cta-button view-fees">View Fees</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            .faq-section {
+                background: linear-gradient(45deg, #007BFF, #0056b3);
+                color: #fff;
+                padding: 60px 20px;
+                border-radius: 10px;
+                text-align: center;
+                margin-top: 50px;
+            }
+        
+            .faq-section h2 {
+                color: white;
+                font-size: 36px;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            }
+        
+            .faq-item {
+                margin-bottom: 20px;
+                text-align: left;
+                background: #ffffff;
+                color: #333;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .faq-question {
+        font-size: 20px;
+        cursor: pointer;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .faq-answer {
+        font-size: 16px;
+        display: none;
+        margin-top: 10px;
+        color: #555;
+    }
+
+    .faq-item:hover .faq-answer, .faq-question:focus + .faq-answer {
+        display: block;
+    }
+    .highlight-section {
+        background: linear-gradient(45deg, #28a745, #218838);
+        color: #fff;
+        padding: 40px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 30px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight-text {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 0 20px 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .cta-button {
+        background: #fff;
+        color: #28a745;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background: #218838;
+        color: #fff;
+    }
+
+    .strikethrough {
+        text-decoration: line-through;
+        color: #ffcccb;
+    }
+</style>
+    </main>
+    
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Code Edge Academy. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

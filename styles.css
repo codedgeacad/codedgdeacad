@@ -1,0 +1,286 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.header .logo img {
+    max-height: 50px;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.header nav ul li {
+    margin: 0 1rem;
+}
+
+.header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background: #007bff;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #fff;
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.course-section, .testimonials-section, .contact-section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.contact-form button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+/* Additional styles for carousel, accordion, and animations */
+
+/* Carousel styles */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-item {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+/* Accordion styles */
+.accordion-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.accordion-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+/* Smooth transition for animated elements */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero, .course-section, .testimonials-section, .faq-section, .contact-section {
+    animation: fadeIn 1s ease-in;
+}
+h2 {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: none;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    display: none;
+}
+
+.hero {
+    background: url('tech-background.jpeg') no-repeat center center/cover;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 100px 0;
+}
+
+.course-section, .testimonials-section, .contact-section {
+    background: url('some.png') repeat;
+    padding: 50px 20px;
+}
+
+.footer {
+    background: linear-gradient(45deg, #007BFF, #0056b3);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Testimonials Section */
+.testimonials-section {
+    background: linear-gradient(45deg, #007BFF, #0056b3);
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.testimonials-section .testimonial-box {
+    background: #ffffff; /* White box */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.testimonials-section .testimonial-box h3 {
+    font-size: 24px;
+    color: #000; /* Black student name */
+    margin-bottom: 10px;
+}
+
+.testimonials-section .testimonial-box p {
+    font-size: 18px;
+    color: #333; /* Black testimonial text */
+    line-height: 1.5;
+}
+
+
+/* Carousel styles for testimonials */
+.testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.carousel-item {
+    display: none;
+    animation: fade 1s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.faq-answer {
+    display: none;
+    margin-top: 5px;
+    color: #555;
+}
+
+.faq-item:hover .faq-answer {
+    display: block;
+}
+
+
+/* Course Structure Section */
+.course-structure-section {
+    background: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.course-structure-section h2 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.course-structure-list {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.course-structure-list li {
+    margin: 10px 0;
+    text-align: left;
+}
+
